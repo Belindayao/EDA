@@ -1,0 +1,5 @@
+1. REMOVE numbers
+s = '12abcd405'
+>>> result = ''.join([i for i in s if not i.isdigit()])
+>>> result
+'abcd'
