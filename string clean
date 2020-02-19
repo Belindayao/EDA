@@ -1,5 +1,30 @@
 1. REMOVE numbers
-s = '12abcd405'
->>> result = ''.join([i for i in s if not i.isdigit()])
->>> result
-'abcd'
+
+def number_remove (string):
+    result = ''.join([i for i in string if not i.isdigit()])
+    return result
+2. remove whitespaces
+def space_remove(string):
+    return string.replace(" ","") 
+3.punctuation remove
+
+def punc_remove(string):
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    no_punct = ""
+    for char in string:
+        if char not in punctuations:
+            no_punct = no_punct + char
+    return no_punct
+
+def punc_remove(text):
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    for i in text:
+        if i in punctuations:
+            text=text.replace(i,"")
+    return text
+punc_remove("aser2#$GF<sdf")
+ 
+4.apply to all rows/columns
+
+df['cleaned_text'] = df['question_text'].map(lambda x: clean_text(x))
+number_space_punct_removed=number_space_removed.apply(punc_remove)
