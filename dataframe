@@ -1,0 +1,10 @@
+d = {'model': 'ep', 
+     'date': ('2017-02-02', '2017-02-04', '2017-03-01')}
+df1 = pd.DataFrame(d)
+
+d = {'model': 'rs',
+     'date': ('2017-01-12', '2017-01-04', '2017-05-01')}
+df2 = pd.DataFrame(d)
+
+df = pd.concat([df1, df2])
+df
